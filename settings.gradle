@@ -1,0 +1,4 @@
+rootProject.name = 'MSG'
+include 'Api'
+include 'DB'
+
