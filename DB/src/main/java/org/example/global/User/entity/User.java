@@ -11,14 +11,13 @@ public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long user_id;
+
+    @Column(unique = true, nullable = false)
     private String username;
+    @Column(nullable = false)
     private String password;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "user",referencedColumnName = "user_id")
-    )
-    private List<Role> roles;
+    @OneToMany(mappedBy = "role")
+    private List<UnionRoleUser> roles;
 
 }

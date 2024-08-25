@@ -1,18 +1,22 @@
 package org.example.global.User.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 public class UnionRoleUser {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @Id
     @ManyToOne
+    @JoinColumn(name = "role_id")
     private Role role;
 }
