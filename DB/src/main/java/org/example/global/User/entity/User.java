@@ -12,12 +12,11 @@ public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long user_id;
-
     @Column(unique = true, nullable = false)
     private String username;
     @Column(nullable = false)
     private String password;
-    @OneToMany(mappedBy = "role")
-    private List<UnionRoleUser> roles;
+    @OneToMany
+    private List<Role> roles;
 
 }
