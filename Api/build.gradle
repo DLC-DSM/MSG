@@ -19,9 +19,7 @@ configurations {
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '8.8'
-}
+
 repositories {
     mavenCentral()
 }
