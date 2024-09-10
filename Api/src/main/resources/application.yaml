@@ -6,10 +6,10 @@ spring:
     properties:
       format_sql: true
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQLDialect
 
   datasource:
-    url: jdbc:mysql://localhost:3305/MSG?userSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3301/MSG?userSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${ROOT_PWD}
