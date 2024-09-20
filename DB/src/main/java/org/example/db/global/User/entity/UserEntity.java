@@ -1,22 +1,24 @@
-package org.example.global.User.entity;
+package org.example.db.global.User.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
 
-@Data
 @Entity
-public class User{
+@Data
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long user_id;
-    @Column(unique = true, nullable = false)
+    private long id;
+
+    @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false)
     private String password;
+    @Column(nullable = false, unique = true)
+    private String email;
     @OneToMany
-    private List<Role> roles;
-
+    private List<RoleEntity> roles;
 }

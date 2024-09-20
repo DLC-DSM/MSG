@@ -1,4 +1,6 @@
 spring:
+  jwts:
+    secret:${JWT_SECRET}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -6,13 +8,16 @@ spring:
     properties:
       format_sql: true
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQLDialect
 
   datasource:
-    url: jdbc:mysql://localhost:3305/MSG?userSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3301/MSG?userSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${ROOT_PWD}
 
-  jwt:
-    secret: ${JWT_SECRET}
+jwt:
+  perfix: ${JWT_PERFIX:Bearer}
+  header: ${JWT_HEADER:Authorization}
+  secret: ${JWT_SECRET:whsrudgksmsrnralsdufjqneoxhdfudekdtjsdlsdbflqmffkel}
+  expiration: ${JWT_EXPIRATION:86400000}

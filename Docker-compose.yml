@@ -24,7 +24,6 @@ services:
       - MYSQL_DATABASE=msg
       - MYSQL_ROOT_PASSWORD=1234
       - TZ = Asia/Seoul
-      - MYSQL_RANDOM_ROOT_PASSWORD=yes
     volumes:
       - C:\Users\user\Desktop\Back\docker\msg:/var/lib/mysql
 

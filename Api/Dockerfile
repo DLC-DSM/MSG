@@ -5,7 +5,7 @@ FROM openjdk:21-jdk
 LABEL authors="user"
 VOLUME /tmp
 
-ARG JAR_FILE=./build/libs/Api-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=./build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 
 CMD ["./gradlew", "clean", "build"]
